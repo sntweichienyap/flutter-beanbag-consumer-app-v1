@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:english_words/english_words.dart';
 import 'package:flutter/services.dart';
+import 'resources/theme_designs.dart';
 
 void main() => runApp(MyApp());
 
@@ -8,12 +9,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(
-        SystemUiOverlayStyle(statusBarColor: Colors.pink));
+        SystemUiOverlayStyle(statusBarColor: ThemeDesign.flutterPrimaryColor));
 
     return MaterialApp(
       title: 'Startup Name Generator',
       theme: ThemeData(
-        primaryColor: Colors.pink,
+        primaryColor: ThemeDesign.flutterPrimaryColor,
       ),
       home: RandomWords(),
     );
