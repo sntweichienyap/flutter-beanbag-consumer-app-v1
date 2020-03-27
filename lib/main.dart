@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       title: 'Startup Name Generator',
       theme: ThemeData(
         primaryColor: ThemeDesign.flutterPrimaryColor,
-        accentColor: ThemeDesign.flutterPrimaryColorLight,
+        accentColor: ThemeDesign.flutterPrimaryColor300,
       ),
       home: RandomWords(),
     );
