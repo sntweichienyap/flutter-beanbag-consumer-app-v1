@@ -1,8 +1,8 @@
 import 'package:http/http.dart' as http;
 
 class CustomHttpClient {
-  final _baseUrl = "http://charitymobileservice.azurewebsites.net/consumerservice.svc";
-  final _secretKey = "Gk8OlaAj14";
+  static const _baseUrl = "http://charitymobileservice.azurewebsites.net/consumerservice.svc";
+  static const _secretKey = "Gk8OlaAj14";
 
   static Future<dynamic> customHttpPost(Object object, String url) {
     var requestObject = new _RequestObject();

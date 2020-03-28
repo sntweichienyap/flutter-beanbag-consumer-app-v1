@@ -1,3 +1,3 @@
-enum StorageEnum { Email, UserID }
+enum StorageEnum { email, userID }
 
-enum RedeemMethodEnum { SCAN, INPUT, SWIPE }
+enum RedeemMethodEnum { scan, input, swipe }
