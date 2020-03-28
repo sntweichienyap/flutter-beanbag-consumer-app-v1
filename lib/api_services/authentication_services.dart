@@ -1,34 +1,35 @@
-import "./../api_services/base_services.dart";
+import 'dart:convert';
+
+import "./../helpers/custom_http_clients.dart";
 
 class AuthenticationService {
-/* Validate User */
+  static Future<ValidateUserResponse> validateUserApi(ValidateUserRequest request) async {
+    var response = await CustomHttpClient.customHttpPost(request, "/ValidateUser");
+
+    var parsedJson = json.decode(response);
+    return ValidateUserResponse.fromJson(parsedJson);
+  }
 }
 
-class ValidateUserRequest extends BaseRequest {
+class ValidateUserRequest {
   String username;
   String password;
   String verificationCode;
 
-  ValidateUserRequest({this.username, this.password, this.verificationCode});
-
-  Map<String, dynamic> toJson() => {"Username": username, "Password": password, "VerificationCode": verificationCode};
+  ValidateUserRequest(this.username, this.password, this.verificationCode);
 }
 
-class ValidateUserResponse extends BaseResponse {
+class ValidateUserResponse {
   int userID;
   String name;
   bool isValid;
   bool isFirstLogin;
+  String error;
 
-  ValidateUserResponse({error, this.userID, this.name, this.isValid, this.isFirstLogin}) : super(error: error);
-
-  factory ValidateUserResponse.fromJson(Map<String, dynamic> json) {
-    return ValidateUserResponse(
-      userID: json['UserId'],
-      name: json['Name'],
-      isValid: json['Valid'],
-      isFirstLogin: json['IsFirstLogin'],
-      error: json["Error"],
-    );
-  }
+  ValidateUserResponse.fromJson(Map<String, dynamic> data)
+      : userID = data["UserId"],
+        name = data["Name"],
+        isValid = data["Valid"],
+        isFirstLogin = data["IsFirstLogin"],
+        error = data["Error"];
 }

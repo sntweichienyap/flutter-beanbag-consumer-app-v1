@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:english_words/english_words.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_beanbag_consumer_app_v1/api_services/authentication_services.dart';
 import 'resources/theme_designs.dart';
 
 void main() => runApp(MyApp());
@@ -8,8 +9,7 @@ void main() => runApp(MyApp());
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setSystemUIOverlayStyle(
-        SystemUiOverlayStyle(statusBarColor: ThemeDesign.appPrimaryColor));
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(statusBarColor: ThemeDesign.appPrimaryColor));
 
     return MaterialApp(
       title: 'Startup Name Generator',
@@ -72,12 +72,12 @@ class RandomWordsState extends State<RandomWords> {
   Widget _buildSuggestions() {
     return ListView.builder(
         padding: const EdgeInsets.all(16.0),
-        itemBuilder: /*1*/ (context, i) {
-          if (i.isOdd) return Divider(); /*2*/
+        itemBuilder: (context, i) {
+          if (i.isOdd) return Divider();
 
-          final index = i ~/ 2; /*3*/
+          final index = i ~/ 2;
           if (index >= _suggestions.length) {
-            _suggestions.addAll(generateWordPairs().take(10)); /*4*/
+            _suggestions.addAll(generateWordPairs().take(10));
           }
           return _buildRow(_suggestions[index]);
         });
@@ -103,14 +103,46 @@ class RandomWordsState extends State<RandomWords> {
             tiles: tiles,
           ).toList();
 
-          return Scaffold(
-            appBar: AppBar(
-              title: Text('Saved Suggestions'),
-            ),
-            body: ListView(children: divided),
+          var title = "Saved Suggestions";
+
+          // return Scaffold(
+          //   appBar: AppBar(
+          //     title: Text('Saved Suggestions'),
+          //   ),
+          //   body: ListView(children: divided),
+          // );
+
+          return FutureBuilder<ValidateUserResponse>(
+            future: _getUserDetails(), // a previously-obtained Future<String> or null
+            builder: (BuildContext context, AsyncSnapshot<ValidateUserResponse> snapshot) {
+              if (snapshot.hasData) {
+                title = snapshot.data.error;
+              } else if (snapshot.hasError) {
+                title = "${snapshot.error}";
+              } else {}
+
+              return Scaffold(
+                appBar: PreferredSize(
+                    preferredSize: Size.fromHeight(200.0), // here the desired height
+                    child: AppBar(
+                      title: Text(title),
+                    )),
+                body: ListView(children: divided),
+              );
+            },
           );
+
+          //return FutureBuilder<ValidateUserResponse>(future: result, builder: )
         },
       ),
     );
+  }
+
+  Future<ValidateUserResponse> _getUserDetails() async {
+    var request = new ValidateUserRequest("", "", "");
+
+    var result = await AuthenticationService.validateUserApi(request);
+
+    return result;
   }
 }
