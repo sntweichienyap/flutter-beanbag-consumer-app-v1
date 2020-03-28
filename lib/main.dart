@@ -9,13 +9,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(
-        SystemUiOverlayStyle(statusBarColor: ThemeDesign.flutterPrimaryColor));
+        SystemUiOverlayStyle(statusBarColor: ThemeDesign.appPrimaryColor));
 
     return MaterialApp(
       title: 'Startup Name Generator',
       theme: ThemeData(
-        primaryColor: ThemeDesign.flutterPrimaryColor,
-        accentColor: ThemeDesign.flutterPrimaryColor300,
+        primaryColor: ThemeDesign.appPrimaryColor,
+        accentColor: ThemeDesign.appPrimaryColor300,
       ),
       home: RandomWords(),
     );
