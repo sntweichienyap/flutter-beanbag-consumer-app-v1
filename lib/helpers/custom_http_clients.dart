@@ -1,10 +1,11 @@
+import 'package:flutter_beanbag_consumer_app_v1/api_services/authentication_services.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
 class CustomHttpClient {
-  static const _baseUrl = "http://charitymobileservice.azurewebsites.net/consumerservice.svc";
-  static const _secretKey = "Gk8OlaAj14";
-  static const _successCodes = [200, 201];
+  static const String _baseUrl = "http://charitymobileservice.azurewebsites.net/consumerservice.svc";
+  static const String _secretKey = "Gk8OlaAj14";
+  static const List<int> _successCodes = [200, 201];
 
   static Future<dynamic> customHttpPost(Object object, String url) async {
     var unixTimeStamp = "";
@@ -23,11 +24,12 @@ class CustomHttpClient {
       var requestObject = {};
       requestObject["request"] = object;
 
-      final http.Response response =
-          await http.post("$_baseUrl$url", headers: requestHeaders, body: json.encode(requestObject));
+      var jsonRequest = json.encode(object);
+
+      final http.Response response = await http.post("$_baseUrl$url", headers: requestHeaders, body: jsonRequest);
 
       if (_successCodes.contains(response.statusCode)) {
-        return response.body;
+        return json.decode(response.body);
       } else {
         throw Exception("Failed to load api with invalid HTTP status code.");
       }
