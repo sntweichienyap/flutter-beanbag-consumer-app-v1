@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:english_words/english_words.dart';
 import 'package:flutter/services.dart';
@@ -127,7 +129,7 @@ class RandomWordsState extends State<RandomWords> {
                     child: AppBar(
                       title: Text(title),
                     )),
-                body: ListView(children: divided),
+                body: Center( child: Image.asset("lib/pictures/logobeanbag.png")),//ListView(children: divided),
               );
             },
           );
