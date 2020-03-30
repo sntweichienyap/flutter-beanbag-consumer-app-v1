@@ -129,7 +129,7 @@ class RandomWordsState extends State<RandomWords> {
                     child: AppBar(
                       title: Text(title),
                     )),
-                body: Center( child: Image.asset("lib/assets/images/logo_seednet.png")),//ListView(children: divided),
+                body: Center( child: Image.asset("lib/assets/images/logo_beanbag.png")),//ListView(children: divided),
               );
             },
           );

@@ -7,9 +7,8 @@
     <item>
         <bitmap
             android:gravity="center"
-            android:src="@mipmap/ic_launcher" />
+            android:src="@mipmap/logo_seednet" />
     </item>
 
     <!-- "@mipmap/launch_image" -->
-    <!-- "@mipmap/logo_seednet_with_flutter.png" -->
 </layer-list>
