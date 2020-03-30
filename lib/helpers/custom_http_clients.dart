@@ -1,6 +1,8 @@
-import 'package:flutter_beanbag_consumer_app_v1/api_services/authentication_services.dart';
+import 'dart:ffi';
+
 import 'package:http/http.dart' as http;
 import 'dart:convert';
+import 'package:crypto/crypto.dart';
 
 class CustomHttpClient {
   static const String _baseUrl = "http://charitymobileservice.azurewebsites.net/consumerservice.svc";
@@ -28,6 +30,8 @@ class CustomHttpClient {
 
       final http.Response response = await http.post("$_baseUrl$url", headers: requestHeaders, body: jsonRequest);
 
+      _hashedToken("abc", "def");
+
       if (_successCodes.contains(response.statusCode)) {
         return json.decode(response.body);
       } else {
@@ -36,5 +40,23 @@ class CustomHttpClient {
     } catch (e) {
       throw e;
     }
+  }
+
+  static String _getUnixTimeStamp() {
+    var unixEpoch = new DateTime(1970, 1, 1).millisecond;
+    var currentEpoch = new DateTime.now().millisecondsSinceEpoch;
+    return (currentEpoch - unixEpoch).toString();
+  }
+
+  static String _hashedToken(String message, String secretKey) {
+    var messageBytes = ascii.encode(message);
+    var secretKeyBytes = ascii.encode(secretKey);
+
+    Hmac hmac = new Hmac(sha256, secretKeyBytes);
+    Digest digest = hmac.convert(messageBytes);
+
+    String base64Mac = base64.encode(digest.bytes);
+
+    return base64Mac;
   }
 }
