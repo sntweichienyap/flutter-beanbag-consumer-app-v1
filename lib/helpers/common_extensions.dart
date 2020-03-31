@@ -1,6 +1,6 @@
 extension ValueParsing on String {
   toInt() {
-    return int.tryParse(this) ?? 0;
+    return this == null ? 0 : int.tryParse(this) ?? 0;
   }
 }
 

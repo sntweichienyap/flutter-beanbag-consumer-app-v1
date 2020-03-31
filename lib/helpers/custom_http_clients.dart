@@ -1,8 +1,9 @@
-import 'dart:ffi';
-
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'package:crypto/crypto.dart';
+import './local_shared_preferences.dart';
+import './../enums/generic_enum.dart';
+import './common_extensions.dart';
 
 class CustomHttpClient {
   static const String _baseUrl = "http://charitymobileservice.azurewebsites.net/consumerservice.svc";
@@ -10,16 +11,17 @@ class CustomHttpClient {
   static const List<int> _successCodes = [200, 201];
 
   static Future<dynamic> customHttpPost(Object object, String url) async {
-    var unixTimeStamp = "";
-    var userID = 1;
-    var hastedToken = "";
+    var unixTimeStamp = _unixTimeStamp();
+    var userID = await LocalSharedPreferences.getValue(StorageEnum.userID);
+    var intUserID = userID.toInt();
+    var hashedToken = _hashedToken("$intUserID$unixTimeStamp", _secretKey);
 
     Map<String, String> requestHeaders = {
       "Content-type": "application/json; charset=UTF-8",
       "Accept": "application/json",
-      "DeviceId": "$userID",
+      "DeviceId": "$intUserID",
       "TimeStamp": "$unixTimeStamp",
-      "HashInput": "$hastedToken"
+      "HashInput": "$hashedToken"
     };
 
     try {
@@ -29,8 +31,6 @@ class CustomHttpClient {
       var jsonRequest = json.encode(object);
 
       final http.Response response = await http.post("$_baseUrl$url", headers: requestHeaders, body: jsonRequest);
-
-      _hashedToken("abc", "def");
 
       if (_successCodes.contains(response.statusCode)) {
         return json.decode(response.body);
@@ -42,7 +42,7 @@ class CustomHttpClient {
     }
   }
 
-  static String _getUnixTimeStamp() {
+  static String _unixTimeStamp() {
     var unixEpoch = new DateTime(1970, 1, 1).millisecond;
     var currentEpoch = new DateTime.now().millisecondsSinceEpoch;
     return (currentEpoch - unixEpoch).toString();

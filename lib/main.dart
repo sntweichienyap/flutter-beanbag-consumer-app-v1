@@ -141,7 +141,7 @@ class RandomWordsState extends State<RandomWords> {
   }
 
   Future<ValidateUserResponse> _getUserDetails() async {
-    var request = new ValidateUserRequest("", "", "");
+    var request = new ValidateUserRequest("abc@abc.com", "abc123", "");
 
     var result = await AuthenticationService.validateUserApi(request);
 
