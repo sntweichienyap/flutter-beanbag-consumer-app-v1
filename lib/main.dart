@@ -5,6 +5,10 @@ import 'package:english_words/english_words.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_beanbag_consumer_app_v1/api_services/authentication_services.dart';
 import 'resources/theme_designs.dart';
+import './helpers/local_shared_preferences.dart';
+import './enums/generic_enum.dart';
+
+import './screens/account_screens/login_page.dart';
 
 void main() => runApp(MyApp());
 
@@ -14,16 +18,26 @@ class MyApp extends StatelessWidget {
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(statusBarColor: ThemeDesign.appPrimaryColor));
 
     return MaterialApp(
-      title: 'Startup Name Generator',
+      title: 'Flutter Demo',
       theme: ThemeData(
-        primaryColor: ThemeDesign.appPrimaryColor,
+        primarySwatch: ThemeDesign.appPrimaryColor,
         accentColor: ThemeDesign.appPrimaryColor300,
       ),
-      home: RandomWords(),
+      home: LoginPage(),
     );
+
+    // return MaterialApp(
+    //   title: 'Startup Name Generator',
+    //   theme: ThemeData(
+    //     primaryColor: ThemeDesign.appPrimaryColor,
+    //     accentColor: ThemeDesign.appPrimaryColor300,
+    //   ),
+    //   home: RandomWords(),
+    // );
   }
 }
 
+/*
 class RandomWords extends StatefulWidget {
   @override
   RandomWordsState createState() => RandomWordsState();
@@ -148,3 +162,4 @@ class RandomWordsState extends State<RandomWords> {
     return result;
   }
 }
+  */

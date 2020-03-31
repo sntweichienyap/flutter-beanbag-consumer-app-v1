@@ -23,4 +23,7 @@ class ThemeDesign {
   static int descriptionFontSize = 18;
 
   static Color descriptionFontColor = Colors.grey;
+
+  /* Padding */
+  static double emptySpacePadding = 10.0;
 }

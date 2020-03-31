@@ -5,7 +5,7 @@ extension ValueParsing on String {
 }
 
 extension ValueChecking on String {
-  isEmpty() {
+  isStringEmpty() {
     return this?.isEmpty ?? true;
   }
 }
