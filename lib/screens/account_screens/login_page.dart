@@ -1,6 +1,6 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
+
 import './../../widgets/custom_app_bar.dart';
 import './../../widgets/custom_progress_dialog.dart';
 import './../../resources/theme_designs.dart';
@@ -18,11 +18,11 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        resizeToAvoidBottomPadding: false,
         appBar: CustomAppBar(
           size: 0,
         ),
-        body: ListView(
-          physics: NeverScrollableScrollPhysics(),
+        body: Column(
           children: <Widget>[
             SizedBox(height: 80),
             Image.asset("lib/assets/images/logo_beanbag.png",
@@ -42,7 +42,7 @@ class _LoginPageState extends State<LoginPage> {
                         onSaved: (value) => _password = value,
                         obscureText: true,
                         decoration: InputDecoration(labelText: "Password")),
-                    SizedBox(height: 20.0),
+                    SizedBox(height: 50.0),
                     SizedBox(
                       width: double.infinity, // match_parent
                       child: RaisedButton(
@@ -67,6 +67,26 @@ class _LoginPageState extends State<LoginPage> {
                   ],
                 ),
               ),
+            ),
+            Spacer(),
+            Row(
+              children: <Widget>[
+                FlatButton(
+                  child: Text("Forgot Password"),
+                  onPressed: () {},
+                  textColor: Colors.grey,
+                  splashColor: Colors.transparent,
+                  highlightColor: Colors.transparent,
+                ),
+                Spacer(),
+                FlatButton(
+                  child: Text("Register"),
+                  onPressed: () {},
+                  textColor: Colors.grey,
+                  splashColor: Colors.transparent,
+                  highlightColor: Colors.transparent,
+                ),
+              ],
             ),
           ],
         ));
