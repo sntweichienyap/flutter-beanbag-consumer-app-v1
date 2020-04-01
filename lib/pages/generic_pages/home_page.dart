@@ -8,13 +8,12 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       appBar: AppBar(
-        title: Text("Home Flutter Firebase"),
-        //actions: <Widget>[LogoutButton()],
+        title: Text("BeanBag"),
       ),
       body: Center(
-        child: Text('Home Page Flutter Firebase  Content'),
+        child: Text('Home'),
       ),
     );
   }

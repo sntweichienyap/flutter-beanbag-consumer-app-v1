@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
-  final Text title;
+  final String title;
   final AppBar appBar;
   final List<Widget> widgets;
   final double size;
@@ -16,7 +16,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     return PreferredSize(
         preferredSize: Size.fromHeight(size),
         child: AppBar(
-          title: title,
+          title: Text(title),
           actions: widgets,
         ));
 
@@ -27,3 +27,5 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     //);
   }
 }
+
+//CHIEN: delete if not using

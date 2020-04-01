@@ -1,9 +1,9 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:english_words/english_words.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_beanbag_consumer_app_v1/api_services/authentication_services.dart';
+import 'package:flutter_beanbag_consumer_app_v1/pages/generic_pages/home_page.dart';
 import 'resources/theme_designs.dart';
 import './helpers/local_shared_preferences.dart';
 import './enums/generic_enum.dart';

@@ -2,7 +2,8 @@ import 'dart:async';
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
 
-import './../../widgets/custom_app_bar.dart';
+import './register_page.dart';
+import './forgot_password_page.dart';
 import './../../widgets/custom_progress_dialog.dart';
 import './../../resources/theme_designs.dart';
 import './../../helpers/common_extensions.dart';
@@ -21,9 +22,11 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         resizeToAvoidBottomPadding: false,
-        appBar: CustomAppBar(
-          size: 0,
-        ),
+        appBar: PreferredSize(
+            preferredSize: Size.fromHeight(0),
+            child: AppBar(
+              title: Text("Login"),
+            )),
         body: Column(
           children: <Widget>[
             SizedBox(height: 80),
@@ -95,7 +98,12 @@ class _LoginPageState extends State<LoginPage> {
               children: <Widget>[
                 FlatButton(
                   child: Text("Forgot Password"),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => ForgotPasswordPage()),
+                    );
+                  },
                   textColor: Colors.grey,
                   splashColor: Colors.transparent,
                   highlightColor: Colors.transparent,
@@ -103,7 +111,12 @@ class _LoginPageState extends State<LoginPage> {
                 Spacer(),
                 FlatButton(
                   child: Text("Register"),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => RegisterPage()),
+                    );
+                  },
                   textColor: Colors.grey,
                   splashColor: Colors.transparent,
                   highlightColor: Colors.transparent,
