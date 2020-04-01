@@ -1,9 +1,11 @@
 import 'dart:async';
+import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
 
 import './../../widgets/custom_app_bar.dart';
 import './../../widgets/custom_progress_dialog.dart';
 import './../../resources/theme_designs.dart';
+import './../../helpers/common_extensions.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -35,16 +37,36 @@ class _LoginPageState extends State<LoginPage> {
                 child: Column(
                   children: <Widget>[
                     TextFormField(
-                        onSaved: (value) => _email = value,
-                        keyboardType: TextInputType.emailAddress,
-                        decoration: InputDecoration(labelText: "Email Address")),
+                      onSaved: (value) => _email = value,
+                      initialValue: "abc@abc.com",
+                      keyboardType: TextInputType.emailAddress,
+                      decoration: InputDecoration(labelText: "Email Address"),
+                      validator: (value) {
+                        var isValidEmail = EmailValidator.validate(value);
+
+                        if (!isValidEmail) {
+                          return "Please enter valid email.";
+                        }
+
+                        return null;
+                      },
+                    ),
                     TextFormField(
-                        onSaved: (value) => _password = value,
-                        obscureText: true,
-                        decoration: InputDecoration(labelText: "Password")),
+                      onSaved: (value) => _password = value,
+                      initialValue: "abc123",
+                      obscureText: true,
+                      decoration: InputDecoration(labelText: "Password"),
+                      validator: (value) {
+                        if (value.isStringEmpty()) {
+                          return "Please enter valid password.";
+                        }
+
+                        return null;
+                      },
+                    ),
                     SizedBox(height: 50.0),
                     SizedBox(
-                      width: double.infinity, // match_parent
+                      width: double.infinity,
                       child: RaisedButton(
                           child: Text("LOGIN"),
                           textColor: ThemeDesign.buttonTextPrimaryColor,
@@ -57,7 +79,7 @@ class _LoginPageState extends State<LoginPage> {
                             if (form.validate()) {
                               CustomeProgressDialog.show(context);
 
-                              Timer(Duration(seconds: 5), () {
+                              Timer(Duration(seconds: 2), () {
                                 print("$_email $_password");
                                 CustomeProgressDialog.hide(context);
                               });

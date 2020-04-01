@@ -8,7 +8,7 @@ import 'resources/theme_designs.dart';
 import './helpers/local_shared_preferences.dart';
 import './enums/generic_enum.dart';
 
-import './screens/account_screens/login_page.dart';
+import './pages/account_pages/login_page.dart';
 
 void main() => runApp(MyApp());
 
