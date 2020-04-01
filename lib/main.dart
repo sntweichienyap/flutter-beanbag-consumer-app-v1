@@ -22,8 +22,15 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: ThemeDesign.appPrimaryColor,
         accentColor: ThemeDesign.appPrimaryColor300,
+        textTheme: TextTheme(
+          caption: TextStyle(fontSize: 22.0),
+          body1: TextStyle(fontSize: 22.0),
+          button: TextStyle(fontSize: 22.0),
+          title: TextStyle(fontSize: 26.0),
+          display1: TextStyle(fontSize: 22.0),
+        ),
       ),
-      home: LoginPage(),
+      home: HomePage(),
     );
 
     // return MaterialApp(

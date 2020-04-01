@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import './../../widgets/custom_drawer.dart';
+import './../../widgets/custom_app_bar.dart';
+
 class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
@@ -9,9 +12,13 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("BeanBag"),
+      drawer: CustomDrawer(),
+      appBar: CustomAppBar(
+        title: "BeanBag",
       ),
+      // AppBar(
+      //   title: Text("BeanBag"),
+      // ),
       body: Center(
         child: Text('Home'),
       ),
