@@ -6,43 +6,85 @@ import './../pages/generic_pages/about_page.dart';
 class CustomDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final colorWhite = Colors.white;
+    final _colorWhite = Colors.white;
 
     return Drawer(
       child: Container(
-        padding: EdgeInsets.only(top: 50),
         color: ThemeDesign.appPrimaryColor,
         child: ListView(
+          physics: const NeverScrollableScrollPhysics(),
           children: <Widget>[
+            Column(mainAxisSize: MainAxisSize.min, crossAxisAlignment: CrossAxisAlignment.start, children: <Widget>[
+              Container(
+                child: Container(
+                  padding: EdgeInsets.fromLTRB(20, 20, 0, 10),
+                  child: new Text('MENU',
+                      style: TextStyle(
+                        color: _colorWhite,
+                        fontSize: 24,
+                      )),
+                ),
+              ),
+              new Padding(
+                  padding: EdgeInsets.all(0.0),
+                  child: new Divider(
+                    thickness: 2,
+                    color: _colorWhite,
+                  )),
+            ]),
             ListTile(
-              leading: Icon(Icons.home),
-              title: Text("HOME"),
+              leading: Icon(
+                Icons.home,
+                color: _colorWhite,
+              ),
+              title: Text(
+                "HOME",
+                style: TextStyle(color: _colorWhite),
+              ),
               onTap: () {},
             ),
             ListTile(
-              leading: Icon(Icons.history),
-              title: Text("HISTORY"),
+              leading: Icon(
+                Icons.history,
+                color: _colorWhite,
+              ),
+              title: Text(
+                "HISTORY",
+                style: TextStyle(color: _colorWhite),
+              ),
               onTap: () {},
             ),
             ListTile(
               leading: Icon(
                 Icons.account_circle,
-                color: colorWhite,
+                color: _colorWhite,
               ),
               title: Text(
                 "ACCOUNT",
-                style: TextStyle(color: colorWhite),
+                style: TextStyle(color: _colorWhite),
               ),
               onTap: () {},
             ),
             ListTile(
-              leading: Icon(Icons.people),
-              title: Text("WE SUPPORT"),
+              leading: Icon(
+                Icons.people,
+                color: _colorWhite,
+              ),
+              title: Text(
+                "WE SUPPORT",
+                style: TextStyle(color: _colorWhite),
+              ),
               onTap: () {},
             ),
             ListTile(
-              leading: Icon(Icons.info),
-              title: Text("ABOUT"),
+              leading: Icon(
+                Icons.info_outline,
+                color: _colorWhite,
+              ),
+              title: Text(
+                "ABOUT",
+                style: TextStyle(color: _colorWhite),
+              ),
               onTap: () {
                 Navigator.pop(context);
                 Navigator.pushAndRemoveUntil(
@@ -53,8 +95,14 @@ class CustomDrawer extends StatelessWidget {
               },
             ),
             ListTile(
-              leading: Icon(Icons.navigate_before),
-              title: Text("LOGOUT"),
+              leading: Icon(
+                Icons.navigate_before,
+                color: _colorWhite,
+              ),
+              title: Text(
+                "LOGOUT",
+                style: TextStyle(color: _colorWhite),
+              ),
               onTap: () {},
             ),
           ],
