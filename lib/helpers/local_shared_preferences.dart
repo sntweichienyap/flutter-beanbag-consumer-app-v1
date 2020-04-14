@@ -14,4 +14,10 @@ class LocalSharedPreferences {
 
     return prefs.getString(storageEnum.toString());
   }
+
+  static Future<bool> removeAll() async {
+    var prefs = await SharedPreferences.getInstance();
+
+    return prefs.clear();
+  }
 }

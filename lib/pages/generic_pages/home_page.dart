@@ -16,11 +16,8 @@ class _HomePageState extends State<HomePage> {
       appBar: CustomAppBar(
         title: "BeanBag",
       ),
-      // AppBar(
-      //   title: Text("BeanBag"),
-      // ),
       body: Center(
-        child: Text('Home'),
+        child: Text('Coming soon.'),
       ),
     );
   }

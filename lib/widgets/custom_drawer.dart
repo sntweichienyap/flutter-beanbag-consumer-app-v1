@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_beanbag_consumer_app_v1/resources/theme_designs.dart';
 
+import './../pages/account_pages/account_details_page.dart';
+import './../pages/account_pages/login_page.dart';
+import './../pages/generic_pages/supported_merchant.dart';
+import './../pages/transaction_history_pages/transaction_history_listing_page.dart';
 import './../pages/generic_pages/about_page.dart';
+import './../pages/generic_pages/home_page.dart';
+import './../resources/theme_designs.dart';
+import './../helpers/local_shared_preferences.dart';
+import 'custom_progress_dialog.dart';
 
 class CustomDrawer extends StatelessWidget {
   @override
@@ -41,7 +48,14 @@ class CustomDrawer extends StatelessWidget {
                 "HOME",
                 style: TextStyle(color: _colorWhite),
               ),
-              onTap: () {},
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.pushAndRemoveUntil(
+                  context,
+                  MaterialPageRoute(builder: (context) => HomePage()),
+                  (Route<dynamic> route) => false,
+                );
+              },
             ),
             ListTile(
               leading: Icon(
@@ -52,7 +66,21 @@ class CustomDrawer extends StatelessWidget {
                 "HISTORY",
                 style: TextStyle(color: _colorWhite),
               ),
-              onTap: () {},
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (BuildContext context) => TransactionHistoryListingPage(),
+                    ));
+
+                // This one for without back button
+                // Navigator.pushAndRemoveUntil(
+                //   context,
+                //   MaterialPageRoute(builder: (context) => TransactionHistoryListingPage()),
+                //   (Route<dynamic> route) => false,
+                // );
+              },
             ),
             ListTile(
               leading: Icon(
@@ -63,7 +91,14 @@ class CustomDrawer extends StatelessWidget {
                 "ACCOUNT",
                 style: TextStyle(color: _colorWhite),
               ),
-              onTap: () {},
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (BuildContext context) => AccountDetailsPage(),
+                    ));
+              },
             ),
             ListTile(
               leading: Icon(
@@ -74,7 +109,14 @@ class CustomDrawer extends StatelessWidget {
                 "WE SUPPORT",
                 style: TextStyle(color: _colorWhite),
               ),
-              onTap: () {},
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (BuildContext context) => SupportedMerchantPage(),
+                    ));
+              },
             ),
             ListTile(
               leading: Icon(
@@ -87,11 +129,11 @@ class CustomDrawer extends StatelessWidget {
               ),
               onTap: () {
                 Navigator.pop(context);
-                Navigator.pushAndRemoveUntil(
-                  context,
-                  MaterialPageRoute(builder: (context) => AboutPage()),
-                  (Route<dynamic> route) => false,
-                );
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (BuildContext context) => AboutPage(),
+                    ));
               },
             ),
             ListTile(
@@ -103,7 +145,18 @@ class CustomDrawer extends StatelessWidget {
                 "LOGOUT",
                 style: TextStyle(color: _colorWhite),
               ),
-              onTap: () {},
+              onTap: () async {
+                CustomeProgressDialog.show(context);
+                await LocalSharedPreferences.removeAll();
+                CustomeProgressDialog.hide(context);
+
+                Navigator.pop(context);
+                Navigator.pushAndRemoveUntil(
+                  context,
+                  MaterialPageRoute(builder: (context) => LoginPage()),
+                  (Route<dynamic> route) => false,
+                );
+              },
             ),
           ],
         ),

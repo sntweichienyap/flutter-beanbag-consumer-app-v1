@@ -4,9 +4,12 @@ import 'package:flutter/material.dart';
 
 import './register_page.dart';
 import './forgot_password_page.dart';
+import './../../enums/generic_enum.dart';
 import './../../widgets/custom_progress_dialog.dart';
 import './../../resources/theme_designs.dart';
 import './../../helpers/common_extensions.dart';
+import './../../pages/generic_pages/home_page.dart';
+import './../../helpers/local_shared_preferences.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -83,8 +86,16 @@ class _LoginPageState extends State<LoginPage> {
                               CustomeProgressDialog.show(context);
 
                               Timer(Duration(seconds: 2), () {
-                                print("$_email $_password");
+                                LocalSharedPreferences.setValue(StorageEnum.email, _email);
+                                LocalSharedPreferences.setValue(StorageEnum.userID, "1");
+
                                 CustomeProgressDialog.hide(context);
+
+                                Navigator.pushAndRemoveUntil(
+                                  context,
+                                  MaterialPageRoute(builder: (context) => HomePage()),
+                                  (Route<dynamic> route) => false,
+                                );
                               });
                             }
                           }),
@@ -97,7 +108,10 @@ class _LoginPageState extends State<LoginPage> {
             Row(
               children: <Widget>[
                 FlatButton(
-                  child: Text("Forgot Password"),
+                  child: Text(
+                    "Forgot Password",
+                    style: TextStyle(fontSize: 16),
+                  ),
                   onPressed: () {
                     Navigator.push(
                       context,
@@ -110,7 +124,10 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 Spacer(),
                 FlatButton(
-                  child: Text("Register"),
+                  child: Text(
+                    "Register",
+                    style: TextStyle(fontSize: 16),
+                  ),
                   onPressed: () {
                     Navigator.push(
                       context,

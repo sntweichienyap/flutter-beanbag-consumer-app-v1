@@ -1,14 +1,10 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_beanbag_consumer_app_v1/api_services/authentication_services.dart';
-import 'package:flutter_beanbag_consumer_app_v1/pages/generic_pages/home_page.dart';
+
 import 'resources/theme_designs.dart';
+import './pages/generic_pages/home_page.dart';
 import './helpers/local_shared_preferences.dart';
 import './enums/generic_enum.dart';
-
-import './pages/account_pages/login_page.dart';
 
 void main() => runApp(MyApp());
 
@@ -31,7 +27,7 @@ class MyApp extends StatelessWidget {
           overline: TextStyle(fontSize: 18.0),
         ),
       ),
-      home: HomePage(),
+      home: HomePage(), //LocalSharedPreferences.getValue(StorageEnum.userID)
     );
 
     // return MaterialApp(
