@@ -8,7 +8,7 @@ import './../../enums/generic_enum.dart';
 import './../../widgets/custom_progress_dialog.dart';
 import './../../resources/theme_designs.dart';
 import './../../helpers/common_extensions.dart';
-import './../../pages/generic_pages/home_page.dart';
+import './../../pages/generic_pages/bottom_navigation_bar_page.dart';
 import './../../helpers/local_shared_preferences.dart';
 
 class LoginPage extends StatefulWidget {
@@ -93,7 +93,7 @@ class _LoginPageState extends State<LoginPage> {
 
                                 Navigator.pushAndRemoveUntil(
                                   context,
-                                  MaterialPageRoute(builder: (context) => HomePage()),
+                                  MaterialPageRoute(builder: (context) => BottomNavigationBarPage()),
                                   (Route<dynamic> route) => false,
                                 );
                               });

@@ -11,13 +11,13 @@ class _DownloadIndexPageState extends State<DownloadIndexPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Download"),
-      ),
+      // appBar: AppBar(
+      //   title: Text("Download"),
+      // ),
       body: Center(
-        child: Text('Coming soon.'),
+        child: Text('Coming soon.1'),
       ),
-            bottomNavigationBar: CustomBottomNavigationBar(),
+      // bottomNavigationBar: CustomBottomNavigationBar(),
     );
   }
 }

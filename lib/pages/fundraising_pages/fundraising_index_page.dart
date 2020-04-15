@@ -9,11 +9,11 @@ class _FundraisingIndexPageState extends State<FundraisingIndexPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Fundraising"),
-      ),
+      // appBar: AppBar(
+      //   title: Text("Fundraising"),
+      // ),
       body: Center(
-        child: Text('Coming soon.'),
+        child: Text('Coming soon.3'),
       ),
     );
   }

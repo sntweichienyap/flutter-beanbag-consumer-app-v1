@@ -9,11 +9,11 @@ class _CouponIndexPageState extends State<CouponIndexPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Coupons"),
-      ),
+      // appBar: AppBar(
+      //   title: Text("Coupons"),
+      // ),
       body: Center(
-        child: Text('Coming soon.'),
+        child: Text('Coming soon.2'),
       ),
     );
   }

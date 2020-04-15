@@ -6,7 +6,7 @@ import './../pages/account_pages/login_page.dart';
 import './../pages/generic_pages/supported_merchant.dart';
 import './../pages/transaction_history_pages/transaction_history_listing_page.dart';
 import './../pages/generic_pages/about_page.dart';
-import './../pages/generic_pages/home_page.dart';
+import './../pages/generic_pages/bottom_navigation_bar_page.dart';
 import './../resources/theme_designs.dart';
 import './../helpers/local_shared_preferences.dart';
 
@@ -52,7 +52,7 @@ class CustomDrawer extends StatelessWidget {
                 Navigator.pop(context);
                 Navigator.pushAndRemoveUntil(
                   context,
-                  MaterialPageRoute(builder: (context) => HomePage()),
+                  MaterialPageRoute(builder: (context) => BottomNavigationBarPage()),
                   (Route<dynamic> route) => false,
                 );
               },

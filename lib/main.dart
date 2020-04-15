@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_beanbag_consumer_app_v1/pages/account_pages/login_page.dart';
+import 'package:flutter_beanbag_consumer_app_v1/pages/generic_pages/bottom_navigation_bar_page.dart';
 
 import 'resources/theme_designs.dart';
 import 'widgets/custom_loading_page.dart';
@@ -33,7 +34,7 @@ class MyApp extends StatelessWidget {
           future: LocalSharedPreferences.getValue(StorageEnum.userID),
           builder: (context, AsyncSnapshot snapshot) {
             if (snapshot.connectionState == ConnectionState.done) {
-              return snapshot.hasData ? HomePage() : LoginPage();
+              return snapshot.hasData ? BottomNavigationBarPage() : LoginPage();
             } else {
               return CustomLoadingPage();
             }
