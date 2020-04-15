@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import './../../widgets/custom_bottom_navigation_bar.dart';
+
 class DownloadIndexPage extends StatefulWidget {
   @override
   _DownloadIndexPageState createState() => _DownloadIndexPageState();
@@ -15,6 +17,7 @@ class _DownloadIndexPageState extends State<DownloadIndexPage> {
       body: Center(
         child: Text('Coming soon.'),
       ),
+            bottomNavigationBar: CustomBottomNavigationBar(),
     );
   }
 }
