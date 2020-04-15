@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_beanbag_consumer_app_v1/resources/theme_designs.dart';
 
+import './../../widgets/custom_bottom_navigation_bar.dart';
 import './../../widgets/custom_drawer.dart';
 import './../../widgets/custom_app_bar.dart';
 
@@ -20,31 +20,7 @@ class _HomePageState extends State<HomePage> {
       body: Center(
         child: Text('Coming soon.'),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed,
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            title: Text('Home'),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.cloud_download),
-            title: Text('DOWNLOAD'),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.card_giftcard),
-            title: Text('COUPONS'),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.monetization_on),
-            title: Text('FUNDRAISING'),
-          ),
-        ],
-        currentIndex: 2,
-        selectedItemColor: Colors.black,
-        backgroundColor: ThemeDesign.appPrimaryColor,
-        unselectedItemColor: Colors.white,        
-      ),
+      bottomNavigationBar: CustomBottomNavigationBar(),
     );
   }
 }
