@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_beanbag_consumer_app_v1/pages/account_pages/login_page.dart';
 
 import 'resources/theme_designs.dart';
+import 'widgets/custom_loading_page.dart';
 import './pages/generic_pages/home_page.dart';
 import './helpers/local_shared_preferences.dart';
 import './enums/generic_enum.dart';
@@ -13,10 +14,6 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(statusBarColor: ThemeDesign.appPrimaryColor));
-
-    LocalSharedPreferences.getValue(StorageEnum.userID).then((val) {
-      print(val);
-    });
 
     return MaterialApp(
         title: 'Flutter Demo',
@@ -38,7 +35,7 @@ class MyApp extends StatelessWidget {
             if (snapshot.connectionState == ConnectionState.done) {
               return snapshot.hasData ? HomePage() : LoginPage();
             } else {
-              return Container(color: ThemeDesign.appPrimaryColor100);
+              return CustomLoadingPage();
             }
           },
         ));

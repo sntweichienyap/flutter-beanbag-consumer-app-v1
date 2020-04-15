@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'custom_progress_dialog.dart';
 import './../pages/account_pages/account_details_page.dart';
 import './../pages/account_pages/login_page.dart';
 import './../pages/generic_pages/supported_merchant.dart';
@@ -8,7 +9,6 @@ import './../pages/generic_pages/about_page.dart';
 import './../pages/generic_pages/home_page.dart';
 import './../resources/theme_designs.dart';
 import './../helpers/local_shared_preferences.dart';
-import 'custom_progress_dialog.dart';
 
 class CustomDrawer extends StatelessWidget {
   @override
