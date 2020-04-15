@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_beanbag_consumer_app_v1/pages/account_pages/login_page.dart';
 
 import 'resources/theme_designs.dart';
 import './pages/generic_pages/home_page.dart';
@@ -13,22 +14,34 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(statusBarColor: ThemeDesign.appPrimaryColor));
 
+    LocalSharedPreferences.getValue(StorageEnum.userID).then((val) {
+      print(val);
+    });
+
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: ThemeDesign.appPrimaryColor,
-        accentColor: ThemeDesign.appPrimaryColor300,
-        textTheme: TextTheme(
-          title: TextStyle(fontSize: 26.0),
-          body2: TextStyle(fontSize: 18.0),
-          body1: TextStyle(fontSize: 22.0),
-          button: TextStyle(fontSize: 22.0),
-          subtitle: TextStyle(fontSize: 18.0),
-          overline: TextStyle(fontSize: 18.0),
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          primarySwatch: ThemeDesign.appPrimaryColor,
+          accentColor: ThemeDesign.appPrimaryColor300,
+          textTheme: TextTheme(
+            title: TextStyle(fontSize: 26.0),
+            body2: TextStyle(fontSize: 18.0),
+            body1: TextStyle(fontSize: 22.0),
+            button: TextStyle(fontSize: 22.0),
+            subtitle: TextStyle(fontSize: 18.0),
+            overline: TextStyle(fontSize: 18.0),
+          ),
         ),
-      ),
-      home: HomePage(), //LocalSharedPreferences.getValue(StorageEnum.userID)
-    );
+        home: FutureBuilder(
+          future: LocalSharedPreferences.getValue(StorageEnum.userID),
+          builder: (context, AsyncSnapshot snapshot) {
+            if (snapshot.connectionState == ConnectionState.done) {
+              return snapshot.hasData ? HomePage() : LoginPage();
+            } else {
+              return Container(color: ThemeDesign.appPrimaryColor100);
+            }
+          },
+        ));
 
     // return MaterialApp(
     //   title: 'Startup Name Generator',

@@ -12,7 +12,9 @@ class LocalSharedPreferences {
   static Future<String> getValue(StorageEnum storageEnum) async {
     var prefs = await SharedPreferences.getInstance();
 
-    return prefs.getString(storageEnum.toString());
+    var value = prefs.getString(storageEnum.toString());
+
+    return value;
   }
 
   static Future<bool> removeAll() async {
