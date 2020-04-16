@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_beanbag_consumer_app_v1/widgets/custom_app_bar.dart';
 
 import './register_page.dart';
 import './forgot_password_page.dart';
@@ -25,11 +26,10 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         resizeToAvoidBottomPadding: false,
-        appBar: PreferredSize(
-            preferredSize: Size.fromHeight(0),
-            child: AppBar(
-              title: Text("Login"),
-            )),
+        appBar: CustomAppBar(
+          title: "Login",
+          size: 0,
+        ),
         body: Column(
           children: <Widget>[
             SizedBox(height: 80),
