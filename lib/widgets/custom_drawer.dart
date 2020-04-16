@@ -73,13 +73,6 @@ class CustomDrawer extends StatelessWidget {
                     MaterialPageRoute(
                       builder: (BuildContext context) => TransactionHistoryListingPage(),
                     ));
-
-                // This one for without back button
-                // Navigator.pushAndRemoveUntil(
-                //   context,
-                //   MaterialPageRoute(builder: (context) => TransactionHistoryListingPage()),
-                //   (Route<dynamic> route) => false,
-                // );
               },
             ),
             ListTile(

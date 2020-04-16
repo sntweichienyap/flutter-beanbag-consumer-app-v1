@@ -23,11 +23,7 @@ class MyApp extends StatelessWidget {
           accentColor: ThemeDesign.appPrimaryColor300,
           textTheme: TextTheme(
             title: TextStyle(fontSize: 26.0),
-            body2: TextStyle(fontSize: 18.0),
-            body1: TextStyle(fontSize: 22.0),
             button: TextStyle(fontSize: 22.0),
-            subtitle: TextStyle(fontSize: 18.0),
-            overline: TextStyle(fontSize: 18.0),
           ),
         ),
         home: FutureBuilder(
