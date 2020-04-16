@@ -36,41 +36,8 @@ class CustomeProgressDialog {
                                   style: TextStyle(fontSize: 16),
                                 )),
                           ]),
-
-                // content: Flex(
-                //   direction: Axis.horizontal,
-                //   children: <Widget>[
-                //     CircularProgressIndicator(),
-                //     Padding(
-                //       padding: EdgeInsets.only(left: 15),
-                //     ),
-                //     Flexible(
-                //         flex: 8,
-                //         child: Text(
-                //           title,
-                //           style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-                //         )),
-                //   ],
-                // ),
               ),
             );
-            // return AlertDialog(
-            //   content: Flex(
-            //     direction: Axis.horizontal,
-            //     children: <Widget>[
-            //       CircularProgressIndicator(),
-            //       Padding(
-            //         padding: EdgeInsets.only(left: 15),
-            //       ),
-            //       Flexible(
-            //           flex: 8,
-            //           child: Text(
-            //             title,
-            //             style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-            //           )),
-            //     ],
-            //   ),
-            // );
           });
     } catch (e) {
       print(e.toString());

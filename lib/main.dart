@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_beanbag_consumer_app_v1/pages/account_pages/login_page.dart';
-import 'package:flutter_beanbag_consumer_app_v1/pages/generic_pages/bottom_navigation_bar_page.dart';
 
 import 'resources/theme_designs.dart';
 import 'widgets/custom_loading_page.dart';
-import './pages/generic_pages/home_page.dart';
+import './pages/account_pages/login_page.dart';
+import './pages/generic_pages/bottom_navigation_bar_page.dart';
 import './helpers/local_shared_preferences.dart';
 import './enums/generic_enum.dart';
 
