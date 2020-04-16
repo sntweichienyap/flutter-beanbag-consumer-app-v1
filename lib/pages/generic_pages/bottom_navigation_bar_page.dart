@@ -46,10 +46,6 @@ class _BottomNavigationBarPageState extends State<BottomNavigationBarPage> {
       appBar: CustomAppBar(
         title: _appBarTitle,
       ),
-
-      // appBar: AppBar(
-      //   title: Text(_appBarTitle),
-      // ),
       body: PageView(
         controller: pageController,
         onPageChanged: _onPageChanged,
@@ -61,7 +57,7 @@ class _BottomNavigationBarPageState extends State<BottomNavigationBarPage> {
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
-            title: Text('Home'),
+            title: Text('HOME'),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.cloud_download),

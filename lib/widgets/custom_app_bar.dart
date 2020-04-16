@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import './../pages/highlight_pages/highlight_summary_listing_page.dart';
+
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String title;
   final AppBar appBar;
@@ -14,18 +16,24 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return PreferredSize(
-        preferredSize: Size.fromHeight(size),        
-        child: AppBar(          
+        preferredSize: Size.fromHeight(size),
+        child: AppBar(
           title: Text(title),
-          actions: widgets,
+          actions: <Widget>[
+            IconButton(
+              icon: Icon(
+                Icons.stars,
+              ),
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (BuildContext context) => HighlightSummaryListingPage(),
+                    ));
+              },
+            )
+          ],
+          //actions: widgets,
         ));
-
-    //                AppBar(
-    // title: title,
-    // backgroundColor: backgroundColor,
-    // actions: widgets,
-    //);
   }
 }
-
-//CHIEN: delete if not using
