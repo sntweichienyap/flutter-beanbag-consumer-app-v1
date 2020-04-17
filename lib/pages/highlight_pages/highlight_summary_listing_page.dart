@@ -4,7 +4,7 @@ import './highlight_new_listing_page.dart';
 import './highlight_popular_listing_page.dart';
 import './../../models/highlight_models.dart';
 import './../../widgets/custom_text.dart';
-import './../../pages/shared_pages/voucher_listing_page.dart';
+import './../../pages/shared_widgets/voucher_listing_widget.dart';
 
 class HighlightSummaryListingPage extends StatefulWidget {
   @override
@@ -54,7 +54,7 @@ class _HighlightSummaryListingPageState extends State<HighlightSummaryListingPag
                 itemBuilder: (context, index) {
                   final item = _popularHighlightList[index];
 
-                  return VoucherListingPage(item.orgName, item.voucherDescription);
+                  return VoucherListingWidget(item.orgName, item.voucherDescription);
                 },
               ),
               GestureDetector(
@@ -79,7 +79,7 @@ class _HighlightSummaryListingPageState extends State<HighlightSummaryListingPag
                 itemBuilder: (context, index) {
                   final item = _newHighlightList[index];
 
-                  return VoucherListingPage(item.orgName, item.voucherDescription);
+                  return VoucherListingWidget(item.orgName, item.voucherDescription);
                 },
               ),
               SizedBox(height: 20),

@@ -3,11 +3,11 @@ import 'package:flutter_beanbag_consumer_app_v1/resources/theme_designs.dart';
 import 'package:flutter_beanbag_consumer_app_v1/widgets/custom_alert_dialog.dart';
 import 'package:flutter_beanbag_consumer_app_v1/widgets/custom_text.dart';
 
-class VoucherListingPage extends StatelessWidget {
+class VoucherListingWidget extends StatelessWidget {
   final String orgName;
   final String voucherDescription;
 
-  VoucherListingPage(this.orgName, this.voucherDescription);
+  VoucherListingWidget(this.orgName, this.voucherDescription);
 
   @override
   Widget build(BuildContext context) {

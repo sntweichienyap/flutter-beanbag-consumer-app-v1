@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_beanbag_consumer_app_v1/pages/shared_pages/voucher_listing_page.dart';
 
 import './../../models/highlight_models.dart';
-import './../../resources/theme_designs.dart';
 import './../../widgets/custom_text.dart';
-import './../../widgets/custom_alert_dialog.dart';
+import './../../pages/shared_widgets/voucher_listing_widget.dart';
 
 class HighlightPopularListingPage extends StatefulWidget {
   @override
@@ -55,7 +53,7 @@ class _HighlightPopularListingPageState extends State<HighlightPopularListingPag
                 itemBuilder: (context, index) {
                   final item = _popularHighlightList[index];
 
-                  return VoucherListingPage(item.orgName, item.voucherDescription);
+                  return VoucherListingWidget(item.orgName, item.voucherDescription);
                 },
               ),
               SizedBox(height: 20),
