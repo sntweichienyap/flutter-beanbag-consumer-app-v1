@@ -4,12 +4,13 @@ import './../../pages/coupon_pages/coupon_details_page.dart';
 import './../../resources/theme_designs.dart';
 import './../../widgets/custom_alert_dialog.dart';
 import './../../widgets/custom_text.dart';
+import './../../models/coupon_models.dart';
 
-class VoucherListingWidget extends StatelessWidget {
-  final String orgName;
-  final String voucherDescription;
+class CouponListingWidget extends StatelessWidget {
+  final CouponModel coupon;
+  //final String voucherDescription;
 
-  VoucherListingWidget(this.orgName, this.voucherDescription);
+  CouponListingWidget(this.coupon);
 
   @override
   Widget build(BuildContext context) {
@@ -30,10 +31,10 @@ class VoucherListingWidget extends StatelessWidget {
           height: 80,
         ),
         title: CustomText(
-          orgName,
+          coupon.orgName,
           fontSize: 18,
         ),
-        subtitle: Text(voucherDescription),
+        subtitle: Text(coupon.voucherDescription),
         trailing: Wrap(
           spacing: 12,
           children: <Widget>[
@@ -42,14 +43,14 @@ class VoucherListingWidget extends StatelessWidget {
                 Icons.share,
                 color: ThemeDesign.appPrimaryColor,
               ),
-              onPressed: () => CustomAlertDialog.show(context, "Share $orgName"),
+              onPressed: () => CustomAlertDialog.show(context, "Share ${coupon.orgName}"),
             ),
             IconButton(
               icon: Icon(
                 Icons.file_download,
                 color: ThemeDesign.appPrimaryColor,
               ),
-              onPressed: () => CustomAlertDialog.show(context, "Download $orgName"),
+              onPressed: () => CustomAlertDialog.show(context, "Download ${coupon.orgName}"),
             )
           ],
         ),
@@ -57,7 +58,9 @@ class VoucherListingWidget extends StatelessWidget {
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => CouponDetailsPage(),
+              builder: (context) => CouponDetailsPage(
+                coupon: coupon,
+              ),
             ),
           );
         },

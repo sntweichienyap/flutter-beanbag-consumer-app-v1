@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import './../../models/highlight_models.dart';
+import './../../models/coupon_models.dart';
 import './../../widgets/custom_text.dart';
-import './../../pages/shared_widgets/voucher_listing_widget.dart';
+import './../../pages/shared_widgets/coupon_listing_widget.dart';
 
 class HighlightPopularListingPage extends StatefulWidget {
   @override
@@ -10,16 +10,16 @@ class HighlightPopularListingPage extends StatefulWidget {
 }
 
 class _HighlightPopularListingPageState extends State<HighlightPopularListingPage> {
-  final _popularHighlightList = <HighlightModel>[
-    HighlightModel(1, "This is a voucher.", "Org B"),
-    HighlightModel(2, "This is a voucher.", "Org B"),
-    HighlightModel(3, "This is a voucher.", "Org B"),
-    HighlightModel(4, "This is a voucher.", "Org B"),
-    HighlightModel(5, "This is a voucher.", "Org B"),
-    HighlightModel(6, "This is a voucher.", "Org B"),
-    HighlightModel(7, "This is a voucher.", "Org B"),
-    HighlightModel(8, "This is a voucher.", "Org B"),
-    HighlightModel(9, "This is a voucher.", "Org B"),
+  final _popularHighlightList = <CouponModel>[
+    CouponModel(1, "This is a voucher.", "Org B"),
+    CouponModel(2, "This is a voucher.", "Org B"),
+    CouponModel(3, "This is a voucher.", "Org B"),
+    CouponModel(4, "This is a voucher.", "Org B"),
+    CouponModel(5, "This is a voucher.", "Org B"),
+    CouponModel(6, "This is a voucher.", "Org B"),
+    CouponModel(7, "This is a voucher.", "Org B"),
+    CouponModel(8, "This is a voucher.", "Org B"),
+    CouponModel(9, "This is a voucher.", "Org B"),
   ];
 
   @override
@@ -53,7 +53,7 @@ class _HighlightPopularListingPageState extends State<HighlightPopularListingPag
                 itemBuilder: (context, index) {
                   final item = _popularHighlightList[index];
 
-                  return VoucherListingWidget(item.orgName, item.voucherDescription);
+                  return CouponListingWidget(item);
                 },
               ),
               SizedBox(height: 20),

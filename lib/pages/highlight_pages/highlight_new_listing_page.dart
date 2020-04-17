@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import './../../models/highlight_models.dart';
+import './../../models/coupon_models.dart';
 import './../../widgets/custom_text.dart';
-import './../../pages/shared_widgets/voucher_listing_widget.dart';
+import './../../pages/shared_widgets/coupon_listing_widget.dart';
 
 class HighlightNewListingPage extends StatefulWidget {
   @override
@@ -10,16 +10,16 @@ class HighlightNewListingPage extends StatefulWidget {
 }
 
 class _HighlightNewListingPageState extends State<HighlightNewListingPage> {
-  final _newHighlightList = <HighlightModel>[
-    HighlightModel(1, "This is a voucher.", "Org A"),
-    HighlightModel(2, "This is a voucher.", "Org A"),
-    HighlightModel(3, "This is a voucher.", "Org A"),
-    HighlightModel(4, "This is a voucher.", "Org A"),
-    HighlightModel(5, "This is a voucher.", "Org A"),
-    HighlightModel(6, "This is a voucher.", "Org A"),
-    HighlightModel(7, "This is a voucher.", "Org A"),
-    HighlightModel(8, "This is a voucher.", "Org A"),
-    HighlightModel(9, "This is a voucher.", "Org A"),
+  final _newHighlightList = <CouponModel>[
+    CouponModel(1, "This is a voucher.", "Org A"),
+    CouponModel(2, "This is a voucher.", "Org A"),
+    CouponModel(3, "This is a voucher.", "Org A"),
+    CouponModel(4, "This is a voucher.", "Org A"),
+    CouponModel(5, "This is a voucher.", "Org A"),
+    CouponModel(6, "This is a voucher.", "Org A"),
+    CouponModel(7, "This is a voucher.", "Org A"),
+    CouponModel(8, "This is a voucher.", "Org A"),
+    CouponModel(9, "This is a voucher.", "Org A"),
   ];
 
   @override
@@ -53,7 +53,7 @@ class _HighlightNewListingPageState extends State<HighlightNewListingPage> {
                 itemBuilder: (context, index) {
                   final item = _newHighlightList[index];
 
-                  return VoucherListingWidget(item.orgName, item.voucherDescription);
+                  return CouponListingWidget(item);
                 },
               ),
               SizedBox(height: 20),
