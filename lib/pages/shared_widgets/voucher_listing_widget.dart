@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_beanbag_consumer_app_v1/resources/theme_designs.dart';
-import 'package:flutter_beanbag_consumer_app_v1/widgets/custom_alert_dialog.dart';
-import 'package:flutter_beanbag_consumer_app_v1/widgets/custom_text.dart';
+
+import './../../pages/coupon_pages/coupon_details_page.dart';
+import './../../resources/theme_designs.dart';
+import './../../widgets/custom_alert_dialog.dart';
+import './../../widgets/custom_text.dart';
 
 class VoucherListingWidget extends StatelessWidget {
   final String orgName;
@@ -51,6 +53,14 @@ class VoucherListingWidget extends StatelessWidget {
             )
           ],
         ),
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => CouponDetailsPage(),
+            ),
+          );
+        },
       ),
     );
   }

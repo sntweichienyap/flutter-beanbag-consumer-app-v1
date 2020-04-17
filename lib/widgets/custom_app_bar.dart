@@ -4,11 +4,12 @@ import './../pages/highlight_pages/highlight_summary_listing_page.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String title;
-  final AppBar appBar;
   final List<Widget> widgets;
   final double size;
+  final bool showWidget;
 
-  const CustomAppBar({Key key, this.title, this.appBar, this.size = 56.0, this.widgets}) : super(key: key);
+  const CustomAppBar({Key key, this.title = "", this.size = 56.0, this.showWidget = true, this.widgets})
+      : super(key: key);
 
   @override
   Size get preferredSize => new Size.fromHeight(size);
@@ -20,18 +21,20 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         child: AppBar(
           title: Text(title),
           actions: <Widget>[
-            IconButton(
-              icon: Icon(
-                Icons.stars,
-              ),
-              onPressed: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (BuildContext context) => HighlightSummaryListingPage(),
-                    ));
-              },
-            )
+            showWidget
+                ? IconButton(
+                    icon: Icon(
+                      Icons.stars,
+                    ),
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (BuildContext context) => HighlightSummaryListingPage(),
+                          ));
+                    },
+                  )
+                : Container()
           ],
           //actions: widgets,
         ));
