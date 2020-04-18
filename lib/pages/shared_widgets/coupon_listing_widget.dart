@@ -5,10 +5,10 @@ import './../../resources/theme_designs.dart';
 import './../../widgets/custom_alert_dialog.dart';
 import './../../widgets/custom_text.dart';
 import './../../models/coupon_models.dart';
+import './../../helpers/common_extensions.dart';
 
 class CouponListingWidget extends StatelessWidget {
   final CouponModel coupon;
-  //final String voucherDescription;
 
   CouponListingWidget(this.coupon);
 
@@ -25,8 +25,8 @@ class CouponListingWidget extends StatelessWidget {
           side: BorderSide(width: 2, color: ThemeDesign.appPrimaryColor)),
       child: ListTile(
         contentPadding: EdgeInsets.all(10),
-        leading: Image.asset(
-          "lib/assets/images/picture_sample.png",
+        leading: Image.memory(
+          coupon.imageBase64.toImage(),
           width: 80,
           height: 80,
         ),
