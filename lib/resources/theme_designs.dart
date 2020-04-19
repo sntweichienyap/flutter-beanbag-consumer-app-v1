@@ -22,6 +22,15 @@ class ThemeDesign {
 
   static double descriptionFontSize = 18;
 
+  static TextStyle titleStyle = TextStyle(
+    fontWeight: FontWeight.bold,
+    fontSize: titleFontSize,
+  );
+
+  static TextStyle descriptionStyle = TextStyle(
+    fontSize: descriptionFontSize,
+  );
+
   /* Padding */
   static double emptySpacePadding = 10.0;
 

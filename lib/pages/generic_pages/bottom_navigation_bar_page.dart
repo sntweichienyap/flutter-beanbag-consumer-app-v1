@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_beanbag_consumer_app_v1/pages/coupon_pages/coupon_index_page.dart';
-import 'package:flutter_beanbag_consumer_app_v1/pages/download_pages/download_index_page.dart';
-import 'package:flutter_beanbag_consumer_app_v1/pages/fundraising_pages/fundraising_index_page.dart';
-import 'package:flutter_beanbag_consumer_app_v1/resources/theme_designs.dart';
-import 'package:flutter_beanbag_consumer_app_v1/widgets/custom_app_bar.dart';
-import 'package:flutter_beanbag_consumer_app_v1/widgets/custom_drawer.dart';
 
 import 'home_page.dart';
+import './../../pages/coupon_pages/coupon_index_page.dart';
+import './../../pages/download_pages/download_index_page.dart';
+import './../../pages/fundraising_pages/fundraising_index_page.dart';
+import './../../resources/theme_designs.dart';
+import './../../widgets/custom_app_bar.dart';
+import './../../widgets/custom_drawer.dart';
+
 
 class BottomNavigationBarPage extends StatefulWidget {
   @override

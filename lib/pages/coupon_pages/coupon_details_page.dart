@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import './../../pages/coupon_pages/coupon_redemption_point_page.dart';
 import './../../resources/theme_designs.dart';
 import './../../widgets/custom_sized_box.dart';
 import './../../models/coupon_models.dart';
@@ -116,14 +117,14 @@ class _CouponDetailsPageState extends State<CouponDetailsPage> {
                           },
                         ),
                         onTap: () {
-                          // Navigator.push(
-                          //   context,
-                          //   MaterialPageRoute(
-                          //     builder: (context) => CouponDetailsPage(
-                          //       coupon: coupon,
-                          //     ),
-                          //   ),
-                          // );
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => CouponRedemptionPointPage(
+                                coupon: widget.coupon,
+                              ),
+                            ),
+                          );
                         },
                       ),
                     ),
