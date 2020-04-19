@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_beanbag_consumer_app_v1/widgets/custom_alert_dialog.dart';
 
+import './../../widgets/custom_alert_dialog.dart';
 import './../../pages/coupon_pages/coupon_redemption_point_page.dart';
 import './../../resources/theme_designs.dart';
 import './../../widgets/custom_sized_box.dart';

@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_beanbag_consumer_app_v1/models/coupon_models.dart';
-import 'package:flutter_beanbag_consumer_app_v1/resources/theme_designs.dart';
-import 'package:flutter_beanbag_consumer_app_v1/widgets/custom_alert_dialog.dart';
+
+import './../../models/coupon_models.dart';
+import './../../resources/theme_designs.dart';
+import './../../widgets/custom_alert_dialog.dart';
 import './../../helpers/common_extensions.dart';
+
 import 'coupon_details_page.dart';
 
 class CouponIndexPage extends StatefulWidget {

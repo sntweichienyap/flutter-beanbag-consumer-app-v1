@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import './../../widgets/custom_app_bar.dart';
+import './../../widgets/custom_loading_page.dart';
+
 class TransactionHistoryListingPage extends StatefulWidget {
   @override
   _TransactionHistoryListingPageState createState() => _TransactionHistoryListingPageState();
@@ -9,12 +12,11 @@ class _TransactionHistoryListingPageState extends State<TransactionHistoryListin
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Transaction History"),
+      appBar: CustomAppBar(
+        title: "Transaction History",
+        showWidget: false,
       ),
-      body: Center(
-        child: Text('Coming soon.'),
-      ),
+      body: CustomLoadingPage(),
     );
   }
 }

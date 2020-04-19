@@ -1,4 +1,4 @@
-import 'package:flutter_beanbag_consumer_app_v1/resources/theme_designs.dart';
+import './../resources/theme_designs.dart';
 
 class CouponModel {
   int voucherID;
@@ -8,13 +8,11 @@ class CouponModel {
   String validUntilDate;
   List<String> tncItems;
   List<RedemptionPoint> redemptionPointItems;
-  RedemptionPoint heh;
 
   CouponModel(
     this.voucherID,
     this.voucherDescription,
     this.orgName, {
-    this.heh = const RedemptionPoint(),
     this.imageBase64 = ThemeDesign.sampleImage,
     this.validUntilDate = "1/1/2020",
     this.tncItems = const [
