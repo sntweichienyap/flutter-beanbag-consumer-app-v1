@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import './../../widgets/custom_bottom_navigation_bar.dart';
+import './../../widgets/custom_loading_page.dart';
 
 class DownloadIndexPage extends StatefulWidget {
   @override
@@ -11,13 +11,7 @@ class _DownloadIndexPageState extends State<DownloadIndexPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   title: Text("Download"),
-      // ),
-      body: Center(
-        child: Text('Coming soon.1'),
-      ),
-      // bottomNavigationBar: CustomBottomNavigationBar(),
+      body: CustomLoadingPage(),
     );
   }
 }

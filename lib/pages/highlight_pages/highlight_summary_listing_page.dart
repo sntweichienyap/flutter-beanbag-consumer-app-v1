@@ -26,65 +26,66 @@ class _HighlightSummaryListingPageState extends State<HighlightSummaryListingPag
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text("Highlights"),
+      appBar: AppBar(
+        title: Text("Highlights"),
+      ),
+      body: SingleChildScrollView(
+        child: Column(
+          children: <Widget>[
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (BuildContext context) => HighlightPopularListingPage(),
+                    ));
+              },
+              child: CustomText(
+                "MOST POPULAR",
+                marginTop: 15,
+                fontSize: 22,
+                textAlign: TextAlign.center,
+              ),
+            ),
+            ListView.builder(
+              shrinkWrap: true,
+              physics: NeverScrollableScrollPhysics(),
+              itemCount: _popularHighlightList.length,
+              itemBuilder: (context, index) {
+                final item = _popularHighlightList[index];
+
+                return CouponListingWidget(item);
+              },
+            ),
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (BuildContext context) => HighlightNewListingPage(),
+                    ));
+              },
+              child: CustomText(
+                "NEW",
+                marginTop: 15,
+                fontSize: 22,
+                textAlign: TextAlign.center,
+              ),
+            ),
+            ListView.builder(
+              shrinkWrap: true,
+              physics: NeverScrollableScrollPhysics(),
+              itemCount: _newHighlightList.length,
+              itemBuilder: (context, index) {
+                final item = _newHighlightList[index];
+
+                return CouponListingWidget(item);
+              },
+            ),
+            SizedBox(height: 20),
+          ],
         ),
-        body: SingleChildScrollView(
-          child: Column(
-            children: <Widget>[
-              GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (BuildContext context) => HighlightPopularListingPage(),
-                      ));
-                },
-                child: CustomText(
-                  "MOST POPULAR",
-                  marginTop: 15,
-                  fontSize: 22,
-                  textAlign: TextAlign.center,
-                ),
-              ),
-              ListView.builder(
-                shrinkWrap: true,
-                physics: NeverScrollableScrollPhysics(),
-                itemCount: _popularHighlightList.length,
-                itemBuilder: (context, index) {
-                  final item = _popularHighlightList[index];
-
-                  return CouponListingWidget(item);
-                },
-              ),
-              GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (BuildContext context) => HighlightNewListingPage(),
-                      ));
-                },
-                child: CustomText(
-                  "NEW",
-                  marginTop: 15,
-                  fontSize: 22,
-                  textAlign: TextAlign.center,
-                ),
-              ),
-              ListView.builder(
-                shrinkWrap: true,
-                physics: NeverScrollableScrollPhysics(),
-                itemCount: _newHighlightList.length,
-                itemBuilder: (context, index) {
-                  final item = _newHighlightList[index];
-
-                  return CouponListingWidget(item);
-                },
-              ),
-              SizedBox(height: 20),
-            ],
-          ),
-        ));
+      ),
+    );
   }
 }
