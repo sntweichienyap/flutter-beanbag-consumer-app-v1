@@ -18,11 +18,9 @@ class ThemeDesign {
   static Color buttonTextSecondaryColor = Colors.pink;
 
   /* Font size & colour */
-  static int titleFontSize = 20;
+  static double titleFontSize = 20;
 
-  static int descriptionFontSize = 18;
-
-  static Color descriptionFontColor = Colors.grey;
+  static double descriptionFontSize = 18;
 
   /* Padding */
   static double emptySpacePadding = 10.0;

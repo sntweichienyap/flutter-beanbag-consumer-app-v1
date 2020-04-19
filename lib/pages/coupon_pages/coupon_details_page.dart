@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_beanbag_consumer_app_v1/resources/theme_designs.dart';
 
+import './../../resources/theme_designs.dart';
+import './../../widgets/custom_sized_box.dart';
 import './../../models/coupon_models.dart';
 import './../../widgets/custom_app_bar.dart';
 import './../../helpers/common_extensions.dart';
@@ -38,18 +39,94 @@ class _CouponDetailsPageState extends State<CouponDetailsPage> {
               Container(
                 padding: EdgeInsets.all(10),
                 margin: EdgeInsets.all(15),
-                height: MediaQuery.of(context).copyWith().size.height * 0.5,
+                //height: MediaQuery.of(context).copyWith().size.height * 0.5,
                 color: Colors.white,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     Text(
-                      "Terms and Conditions",
-                      style: TextStyle(fontWeight: FontWeight.bold),
+                      widget.coupon.orgName,
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: ThemeDesign.titleFontSize,
+                      ),
                     ),
-                    Flexible(
-                      child: Text(widget.coupon.tnc),
-                    )
+                    CustomSizedBox(),
+                    Text(
+                      "Valid Until",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: ThemeDesign.titleFontSize,
+                      ),
+                    ),
+                    Text(
+                      widget.coupon.validUntilDate,
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: ThemeDesign.titleFontSize,
+                      ),
+                    ),
+                    CustomSizedBox(),
+                    Text(
+                      "Terms and Conditions",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: ThemeDesign.titleFontSize,
+                      ),
+                    ),
+                    ListView.builder(
+                      shrinkWrap: true,
+                      physics: NeverScrollableScrollPhysics(),
+                      itemCount: widget.coupon.tncItems.length,
+                      itemBuilder: (BuildContext context, int index) {
+                        return Text(
+                          widget.coupon.tncItems[index],
+                          style: TextStyle(fontSize: ThemeDesign.descriptionFontSize),
+                        );
+                      },
+                    ),
+                    CustomSizedBox(),
+                    Card(
+                      margin: EdgeInsets.fromLTRB(5, 5, 5, 10),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(10),
+                              bottomLeft: Radius.circular(10),
+                              bottomRight: Radius.circular(10),
+                              topRight: Radius.circular(10)),
+                          side: BorderSide(width: 2, color: ThemeDesign.appPrimaryColor)),
+                      child: ListTile(
+                        contentPadding: EdgeInsets.all(10),
+                        title: Text(
+                          "Redemption Points",
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: ThemeDesign.titleFontSize,
+                          ),
+                        ),
+                        subtitle: ListView.builder(
+                          shrinkWrap: true,
+                          physics: NeverScrollableScrollPhysics(),
+                          itemCount: widget.coupon.redemptionPointItems.length,
+                          itemBuilder: (BuildContext context, int index) {
+                            return Text(
+                              widget.coupon.redemptionPointItems[index].name,
+                              style: TextStyle(fontSize: ThemeDesign.descriptionFontSize),
+                            );
+                          },
+                        ),
+                        onTap: () {
+                          // Navigator.push(
+                          //   context,
+                          //   MaterialPageRoute(
+                          //     builder: (context) => CouponDetailsPage(
+                          //       coupon: coupon,
+                          //     ),
+                          //   ),
+                          // );
+                        },
+                      ),
+                    ),
                   ],
                 ),
               ),
