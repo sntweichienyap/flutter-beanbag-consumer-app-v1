@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import './../../pages/coupon_pages/coupon_details_page.dart';
 import './../../resources/theme_designs.dart';
 import './../../widgets/custom_alert_dialog.dart';
-import './../../widgets/custom_text.dart';
 import './../../models/coupon_models.dart';
 import './../../helpers/common_extensions.dart';
 
@@ -30,11 +29,14 @@ class CouponListingWidget extends StatelessWidget {
           width: 80,
           height: 80,
         ),
-        title: CustomText(
+        title: Text(
           coupon.orgName,
-          fontSize: 18,
+          style: ThemeDesign.titleStyle,
         ),
-        subtitle: Text(coupon.voucherDescription),
+        subtitle: Text(
+          coupon.voucherDescription,
+          style: ThemeDesign.descriptionStyle,
+        ),
         trailing: Wrap(
           spacing: 12,
           children: <Widget>[

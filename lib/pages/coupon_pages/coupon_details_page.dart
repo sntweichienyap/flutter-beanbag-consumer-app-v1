@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_beanbag_consumer_app_v1/widgets/custom_alert_dialog.dart';
 
 import './../../pages/coupon_pages/coupon_redemption_point_page.dart';
 import './../../resources/theme_designs.dart';
@@ -34,8 +35,37 @@ class _CouponDetailsPageState extends State<CouponDetailsPage> {
                 fit: BoxFit.fill,
                 height: 160,
               ),
-              Row(
-                children: <Widget>[],
+              CustomSizedBox(),
+              ListTile(
+                contentPadding: EdgeInsets.all(10),
+                title: Text(
+                  widget.coupon.orgName,
+                  style: ThemeDesign.titleStyle,
+                ),
+                subtitle: Text(
+                  widget.coupon.voucherDescription,
+                  style: ThemeDesign.descriptionStyle,
+                ),
+                trailing: Wrap(
+                  spacing: 12,
+                  children: <Widget>[
+                    RaisedButton(
+                      child: Text("REDEEM"),
+                      textColor: ThemeDesign.buttonTextPrimaryColor,
+                      color: ThemeDesign.buttonPrimaryColor,
+                      onPressed: () => {
+                        CustomAlertDialog.show(context, "Share ${widget.coupon.orgName}"),
+                      },
+                    ),
+                    IconButton(
+                      icon: Icon(
+                        Icons.share,
+                        color: ThemeDesign.appPrimaryColor,
+                      ),
+                      onPressed: () => CustomAlertDialog.show(context, "Redeem ${widget.coupon.orgName}"),
+                    )
+                  ],
+                ),
               ),
               Container(
                 padding: EdgeInsets.all(10),
