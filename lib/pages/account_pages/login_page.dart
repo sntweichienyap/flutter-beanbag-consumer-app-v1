@@ -33,8 +33,11 @@ class _LoginPageState extends State<LoginPage> {
         body: Column(
           children: <Widget>[
             SizedBox(height: 80),
-            Image.asset("lib/assets/images/logo_beanbag.png",
-                width: MediaQuery.of(context).size.width, fit: BoxFit.contain),
+            Image.asset(
+              "lib/assets/images/logo_beanbag.png",
+              width: MediaQuery.of(context).size.width,
+              fit: BoxFit.contain,
+            ),
             SizedBox(height: 60),
             Container(
               padding: EdgeInsets.only(left: ThemeDesign.emptySpacePadding, right: ThemeDesign.emptySpacePadding),
