@@ -8,14 +8,16 @@ class ThemeDesign {
 
   static Color appPrimaryColor100 = Colors.pink[100];
 
-  /*  Button colour */
+  /*  Button colour * size */
   static Color buttonPrimaryColor = Colors.pink;
 
   static Color buttonTextPrimaryColor = Colors.white;
 
-  static Color buttonSecondaryColor = Colors.transparent;
+  static Color buttonSecondaryColor = Colors.white;
 
   static Color buttonTextSecondaryColor = Colors.pink;
+
+  static double buttonFontSize = 20;
 
   /* Font size & colour */
   static double titleFontSize = 20;

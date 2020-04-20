@@ -1,9 +1,10 @@
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'package:crypto/crypto.dart';
+
 import './local_shared_preferences.dart';
+import './extension_functions.dart';
 import './../enums/generic_enum.dart';
-import './common_extensions.dart';
 
 class CustomHttpClient {
   static const String _baseUrl = "http://charitymobileservice.azurewebsites.net/consumerservice.svc";

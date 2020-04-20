@@ -1,16 +1,16 @@
 import 'dart:async';
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_beanbag_consumer_app_v1/widgets/custom_app_bar.dart';
 
 import './register_page.dart';
 import './forgot_password_page.dart';
 import './../../enums/generic_enum.dart';
 import './../../widgets/custom_progress_dialog.dart';
 import './../../resources/theme_designs.dart';
-import './../../helpers/common_extensions.dart';
+import './../../helpers/extension_functions.dart';
 import './../../pages/generic_pages/bottom_navigation_bar_page.dart';
 import './../../helpers/local_shared_preferences.dart';
+import './../../widgets/custom_app_bar.dart';
 
 class LoginPage extends StatefulWidget {
   @override

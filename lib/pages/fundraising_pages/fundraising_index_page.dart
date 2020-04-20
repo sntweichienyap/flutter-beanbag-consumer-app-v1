@@ -4,7 +4,7 @@ import './../../models/fundraising_models.dart';
 import './../../pages/fundraising_pages/fundraising_details_page.dart';
 import './../../resources/theme_designs.dart';
 import './../../widgets/custom_alert_dialog.dart';
-import './../../helpers/common_extensions.dart';
+import './../../helpers/extension_functions.dart';
 
 class FundraisingIndexPage extends StatefulWidget {
   @override

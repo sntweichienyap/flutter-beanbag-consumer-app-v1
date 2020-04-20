@@ -4,7 +4,7 @@ import './../../pages/coupon_pages/coupon_details_page.dart';
 import './../../resources/theme_designs.dart';
 import './../../widgets/custom_alert_dialog.dart';
 import './../../models/coupon_models.dart';
-import './../../helpers/common_extensions.dart';
+import './../../helpers/extension_functions.dart';
 
 class CouponListingWidget extends StatelessWidget {
   final CouponModel coupon;

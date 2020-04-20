@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import './../../models/coupon_models.dart';
 import './../../resources/theme_designs.dart';
 import './../../widgets/custom_alert_dialog.dart';
-import './../../helpers/common_extensions.dart';
+import './../../helpers/extension_functions.dart';
 
 import 'coupon_details_page.dart';
 

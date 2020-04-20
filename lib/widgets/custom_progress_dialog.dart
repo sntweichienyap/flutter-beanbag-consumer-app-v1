@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import './../helpers/common_extensions.dart';
+import './../helpers/extension_functions.dart';
 
 class CustomeProgressDialog {
   static show(BuildContext context, {String title = ""}) {

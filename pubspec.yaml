@@ -44,6 +44,7 @@ flutter:
   assets:
     - lib/assets/images/logo_beanbag.png
     - lib/assets/images/picture_sample.png
+    - lib/assets/images/picture_qr_code.png
     #- lib/assets/icons/
 
   #  - images/a_dot_ham.jpeg

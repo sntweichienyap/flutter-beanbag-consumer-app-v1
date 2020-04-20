@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import './../../models/supported_merchant_models.dart';
 import './../../resources/theme_designs.dart';
 import './../../widgets/custom_app_bar.dart';
-import './../../helpers/common_extensions.dart';
+import './../../helpers/extension_functions.dart';
 
 class SupportedMerchantPage extends StatefulWidget {
   @override
