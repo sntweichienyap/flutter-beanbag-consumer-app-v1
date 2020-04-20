@@ -63,7 +63,7 @@ class _CouponIndexPageState extends State<CouponIndexPage> {
                       runSpacing: 20,
                       children: <Widget>[
                         Text(
-                          coupon.voucherDescription,
+                          coupon.couponDescription,
                           style: ThemeDesign.descriptionStyle,
                         ),
                         Text(

@@ -1,17 +1,17 @@
 import './../resources/theme_designs.dart';
 
 class CouponModel {
-  int voucherID;
-  String voucherDescription;
-  String orgName;
-  String imageBase64;
-  String validUntilDate;
-  List<String> tncItems;
-  List<RedemptionPoint> redemptionPointItems;
+  final int couponID;
+  final String couponDescription;
+  final String orgName;
+  final String imageBase64;
+  final String validUntilDate;
+  final List<String> tncItems;
+  final List<RedemptionPoint> redemptionPointItems;
 
-  CouponModel(
-    this.voucherID,
-    this.voucherDescription,
+  const CouponModel(
+    this.couponID,
+    this.couponDescription,
     this.orgName, {
     this.imageBase64 = ThemeDesign.sampleImage,
     this.validUntilDate = "1/1/2020",

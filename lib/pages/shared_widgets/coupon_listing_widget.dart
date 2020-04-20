@@ -34,7 +34,7 @@ class CouponListingWidget extends StatelessWidget {
           style: ThemeDesign.titleStyle,
         ),
         subtitle: Text(
-          coupon.voucherDescription,
+          coupon.couponDescription,
           style: ThemeDesign.descriptionStyle,
         ),
         trailing: Wrap(
