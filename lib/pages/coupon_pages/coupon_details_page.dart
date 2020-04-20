@@ -1,5 +1,9 @@
+import 'dart:math';
 import 'package:flutter/material.dart';
 
+import './../../pages/coupon_pages/coupon_redeem_by_merchant_name_page.dart';
+import './../../pages/coupon_pages/coupon_redeem_by_qr_code_page.dart';
+import './../../pages/coupon_pages/coupon_redeem_by_swipe_page.dart';
 import './../../widgets/custom_alert_dialog.dart';
 import './../../pages/coupon_pages/coupon_redemption_point_page.dart';
 import './../../resources/theme_designs.dart';
@@ -53,8 +57,38 @@ class _CouponDetailsPageState extends State<CouponDetailsPage> {
                       child: Text("REDEEM"),
                       textColor: ThemeDesign.buttonTextPrimaryColor,
                       color: ThemeDesign.buttonPrimaryColor,
-                      onPressed: () => {
-                        CustomAlertDialog.showSuccess(context, "Share ${widget.coupon.orgName}"),
+                      onPressed: () {
+                        Random _random = new Random();
+                        int _randomNumber = _random.nextInt(2);
+
+                        if (_randomNumber == 0) {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => CouponRedeemByMerchantNamePage(
+                                coupon: widget.coupon,
+                              ),
+                            ),
+                          );
+                        } else if (_randomNumber == 1) {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => CouponRedeemByQRCodePage(
+                                coupon: widget.coupon,
+                              ),
+                            ),
+                          );
+                        } else {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => CouponRedeemBySwipePage(
+                                coupon: widget.coupon,
+                              ),
+                            ),
+                          );
+                        }
                       },
                     ),
                     IconButton(
@@ -62,7 +96,7 @@ class _CouponDetailsPageState extends State<CouponDetailsPage> {
                         Icons.share,
                         color: ThemeDesign.appPrimaryColor,
                       ),
-                      onPressed: () => CustomAlertDialog.showSuccess(context, "Redeem ${widget.coupon.orgName}"),
+                      onPressed: () => CustomAlertDialog.showSuccess(context, "Share ${widget.coupon.orgName}"),
                     )
                   ],
                 ),
