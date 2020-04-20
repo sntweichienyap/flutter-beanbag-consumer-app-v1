@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_beanbag_consumer_app_v1/pages/download_pages/download_index_page.dart';
-import 'package:flutter_beanbag_consumer_app_v1/pages/generic_pages/home_page.dart';
 
 import './../resources/theme_designs.dart';
 

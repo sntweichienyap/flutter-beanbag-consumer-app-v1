@@ -1,7 +1,7 @@
 class GlobalModel {
-  int BottomNavigationBarIndex;
+  int bottomNavigationBarIndex;
 
-  GlobalModel(this.BottomNavigationBarIndex);
+  GlobalModel(this.bottomNavigationBarIndex);
 }
 
 

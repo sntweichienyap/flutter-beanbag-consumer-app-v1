@@ -16,7 +16,7 @@ class _DownloadIndexPageState extends State<DownloadIndexPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        width: StaticFunctions.GetDeviceWidth(context),
+        width: StaticFunctions.getDeviceWidth(context),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
@@ -71,7 +71,7 @@ class _DownloadIndexPageState extends State<DownloadIndexPage> {
                     children: <Widget>[
                       Image.asset(
                         "lib/assets/images/picture_qr_code.png",
-                        width: StaticFunctions.GetDeviceWidth(context) / 4,
+                        width: StaticFunctions.getDeviceWidth(context) / 4,
                         fit: BoxFit.contain,
                       ),
                       CustomSizedBox(
@@ -89,7 +89,7 @@ class _DownloadIndexPageState extends State<DownloadIndexPage> {
                     children: <Widget>[
                       Image.asset(
                         "lib/assets/images/picture_qr_code.png",
-                        width: StaticFunctions.GetDeviceWidth(context) / 4,
+                        width: StaticFunctions.getDeviceWidth(context) / 4,
                         fit: BoxFit.contain,
                       ),
                       CustomSizedBox(
