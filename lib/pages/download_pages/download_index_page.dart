@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_beanbag_consumer_app_v1/helpers/static_functions.dart';
-import 'package:flutter_beanbag_consumer_app_v1/pages/download_pages/download_input_code_page.dart';
-import 'package:flutter_beanbag_consumer_app_v1/resources/theme_designs.dart';
-import 'package:flutter_beanbag_consumer_app_v1/widgets/custom_sized_box.dart';
-import 'package:flutter_beanbag_consumer_app_v1/widgets/custom_text.dart';
+
+import './../../helpers/static_functions.dart';
+import './../../pages/download_pages/download_input_code_page.dart';
+import './../../resources/theme_designs.dart';
+import './../../widgets/custom_sized_box.dart';
+import './../../widgets/custom_text.dart';
 import './../../widgets/custom_alert_dialog.dart';
 
 class DownloadIndexPage extends StatefulWidget {
@@ -65,7 +66,7 @@ class _DownloadIndexPageState extends State<DownloadIndexPage> {
               children: <Widget>[
                 GestureDetector(
                   onTap: () => {
-                    CustomAlertDialog.show(context, "Scan Program."),
+                    CustomAlertDialog.showSuccess(context, "Scan Program."),
                   },
                   child: Column(
                     children: <Widget>[
@@ -83,7 +84,7 @@ class _DownloadIndexPageState extends State<DownloadIndexPage> {
                 ),
                 GestureDetector(
                   onTap: () => {
-                    CustomAlertDialog.show(context, "Scan Campaign."),
+                    CustomAlertDialog.showSuccess(context, "Scan Campaign."),
                   },
                   child: Column(
                     children: <Widget>[

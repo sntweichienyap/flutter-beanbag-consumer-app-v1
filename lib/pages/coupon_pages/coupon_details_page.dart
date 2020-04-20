@@ -54,7 +54,7 @@ class _CouponDetailsPageState extends State<CouponDetailsPage> {
                       textColor: ThemeDesign.buttonTextPrimaryColor,
                       color: ThemeDesign.buttonPrimaryColor,
                       onPressed: () => {
-                        CustomAlertDialog.show(context, "Share ${widget.coupon.orgName}"),
+                        CustomAlertDialog.showSuccess(context, "Share ${widget.coupon.orgName}"),
                       },
                     ),
                     IconButton(
@@ -62,7 +62,7 @@ class _CouponDetailsPageState extends State<CouponDetailsPage> {
                         Icons.share,
                         color: ThemeDesign.appPrimaryColor,
                       ),
-                      onPressed: () => CustomAlertDialog.show(context, "Redeem ${widget.coupon.orgName}"),
+                      onPressed: () => CustomAlertDialog.showSuccess(context, "Redeem ${widget.coupon.orgName}"),
                     )
                   ],
                 ),

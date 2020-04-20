@@ -45,14 +45,14 @@ class CouponListingWidget extends StatelessWidget {
                 Icons.share,
                 color: ThemeDesign.appPrimaryColor,
               ),
-              onPressed: () => CustomAlertDialog.show(context, "Share ${coupon.orgName}"),
+              onPressed: () => CustomAlertDialog.showSuccess(context, "Share ${coupon.orgName}"),
             ),
             IconButton(
               icon: Icon(
                 Icons.file_download,
                 color: ThemeDesign.appPrimaryColor,
               ),
-              onPressed: () => CustomAlertDialog.show(context, "Download ${coupon.orgName}"),
+              onPressed: () => CustomAlertDialog.showSuccess(context, "Download ${coupon.orgName}"),
             )
           ],
         ),

@@ -83,7 +83,7 @@ class _FundraisingIndexPageState extends State<FundraisingIndexPage> {
                             color: ThemeDesign.appPrimaryColor,
                           ),
                           onPressed: () =>
-                              CustomAlertDialog.show(context, "Share ${fundraising.fundraisingDescription}"),
+                              CustomAlertDialog.showSuccess(context, "Share ${fundraising.fundraisingDescription}"),
                         ),
                       ],
                     ),

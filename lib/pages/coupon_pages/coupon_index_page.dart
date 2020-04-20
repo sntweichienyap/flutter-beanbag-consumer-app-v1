@@ -83,14 +83,14 @@ class _CouponIndexPageState extends State<CouponIndexPage> {
                             Icons.share,
                             color: ThemeDesign.appPrimaryColor,
                           ),
-                          onPressed: () => CustomAlertDialog.show(context, "Share ${coupon.orgName}"),
+                          onPressed: () => CustomAlertDialog.showSuccess(context, "Share ${coupon.orgName}"),
                         ),
                         IconButton(
                           icon: Icon(
                             Icons.delete_forever,
                             color: ThemeDesign.appPrimaryColor,
                           ),
-                          onPressed: () => CustomAlertDialog.show(context, "Delete ${coupon.orgName}"),
+                          onPressed: () => CustomAlertDialog.showSuccess(context, "Delete ${coupon.orgName}"),
                         )
                       ],
                     ),
