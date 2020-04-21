@@ -60,7 +60,7 @@ class _TransactionHistoryListingPageState extends State<TransactionHistoryListin
                         style: ThemeDesign.descriptionStyle,
                       ),
                       Text(
-                        "DATE \n TIME",
+                        "DATE \nTIME",
                         style: ThemeDesign.descriptionStyle,
                         maxLines: 3,
                       ),
