@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_beanbag_consumer_app_v1/resources/theme_designs.dart';
-import 'package:flutter_beanbag_consumer_app_v1/widgets/custom_alert_dialog.dart';
-import 'package:flutter_beanbag_consumer_app_v1/widgets/custom_app_bar.dart';
-import 'package:flutter_beanbag_consumer_app_v1/widgets/custom_sized_box.dart';
-import 'package:flutter_beanbag_consumer_app_v1/widgets/custom_text.dart';
-import './../../helpers/extension_functions.dart';
+
+import './../../resources/theme_designs.dart';
+import './../../widgets/custom_alert_dialog.dart';
+import './../../widgets/custom_app_bar.dart';
+import './../../widgets/custom_sized_box.dart';
+import './../../widgets/custom_text.dart';
 
 class DownloadInputCodePage extends StatefulWidget {
   @override
@@ -47,11 +47,13 @@ class _DownloadInputCodePageState extends State<DownloadInputCodePage> {
                 decoration: InputDecoration(
                     enabledBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10),
-                      borderSide: BorderSide(color: ThemeDesign.appPrimaryColor),
+                      borderSide:
+                          BorderSide(color: ThemeDesign.appPrimaryColor),
                     ),
                     focusedBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(10)),
-                      borderSide: BorderSide(color: ThemeDesign.appPrimaryColor),
+                      borderSide:
+                          BorderSide(color: ThemeDesign.appPrimaryColor),
                     ),
                     hintText: 'Enter code here'),
               ),
@@ -64,9 +66,11 @@ class _DownloadInputCodePageState extends State<DownloadInputCodePage> {
                 ),
                 onPressed: () {
                   if (_couponController.text.isEmpty) {
-                    return CustomAlertDialog.showError(context, "Coupon cannot be empty.");
+                    return CustomAlertDialog.showError(
+                        context, "Coupon cannot be empty.");
                   } else {
-                    CustomAlertDialog.showSuccess(context, "You entered ${_couponController.text}.");
+                    CustomAlertDialog.showSuccess(
+                        context, "You entered ${_couponController.text}.");
                     _couponController.text = "";
                     return;
                   }
@@ -96,11 +100,13 @@ class _DownloadInputCodePageState extends State<DownloadInputCodePage> {
                 decoration: InputDecoration(
                     enabledBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10),
-                      borderSide: BorderSide(color: ThemeDesign.appPrimaryColor),
+                      borderSide:
+                          BorderSide(color: ThemeDesign.appPrimaryColor),
                     ),
                     focusedBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(10)),
-                      borderSide: BorderSide(color: ThemeDesign.appPrimaryColor),
+                      borderSide:
+                          BorderSide(color: ThemeDesign.appPrimaryColor),
                     ),
                     hintText: 'Enter campaign here'),
               ),
@@ -113,9 +119,11 @@ class _DownloadInputCodePageState extends State<DownloadInputCodePage> {
                 ),
                 onPressed: () {
                   if (_campaignController.text.isEmpty) {
-                    return CustomAlertDialog.showError(context, "Campaign cannot be empty.");
+                    return CustomAlertDialog.showError(
+                        context, "Campaign cannot be empty.");
                   } else {
-                    CustomAlertDialog.showSuccess(context, "You entered ${_campaignController.text}.");
+                    CustomAlertDialog.showSuccess(
+                        context, "You entered ${_campaignController.text}.");
                     _campaignController.text = "";
                     return;
                   }
