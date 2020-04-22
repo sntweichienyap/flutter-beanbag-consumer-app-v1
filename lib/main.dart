@@ -16,25 +16,26 @@ class MyApp extends StatelessWidget {
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(statusBarColor: ThemeDesign.appPrimaryColor));
 
     return MaterialApp(
-        title: 'Flutter Demo',
-        theme: ThemeData(
-          primarySwatch: ThemeDesign.appPrimaryColor,
-          accentColor: ThemeDesign.appPrimaryColor300,
-          textTheme: TextTheme(
-            title: TextStyle(fontSize: 26.0),
-            button: TextStyle(fontSize: 22.0),
-          ),
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        primarySwatch: ThemeDesign.appPrimaryColor,
+        accentColor: ThemeDesign.appPrimaryColor300,
+        textTheme: TextTheme(
+          title: TextStyle(fontSize: 26.0),
+          button: TextStyle(fontSize: 22.0),
         ),
-        home: FutureBuilder(
-          future: LocalSharedPreferences.getValue(StorageEnum.userID),
-          builder: (context, AsyncSnapshot snapshot) {
-            if (snapshot.connectionState == ConnectionState.done) {
-              return snapshot.hasData ? BottomNavigationBarPage() : LoginPage();
-            } else {
-              return CustomLoadingPage();
-            }
-          },
-        ));
+      ),
+      home: FutureBuilder(
+        future: LocalSharedPreferences.getValue(StorageEnum.userID),
+        builder: (context, AsyncSnapshot snapshot) {
+          if (snapshot.connectionState == ConnectionState.done) {
+            return snapshot.hasData ? BottomNavigationBarPage() : LoginPage();
+          } else {
+            return CustomLoadingPage();
+          }
+        },
+      ),
+    );
 
     // return MaterialApp(
     //   title: 'Startup Name Generator',
